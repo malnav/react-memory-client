@@ -1,6 +1,6 @@
 import useStyle from "./Styles";
 import Moment from "react-moment";
-import React,{ useContext, useState } from "react";
+import React,{ useContext } from "react";
 import DeleteIcon from "@material-ui/icons/Delete";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
 import OpenInNew from "@material-ui/icons/OpenInNew";
@@ -26,7 +26,7 @@ const Memory = ({ memory }) => {
   const classes = useStyle()
   
 
-  const { setModalMemory, setMemoryGlobal, memories, setMemories, user,open, setOpen } =
+  const { setModalMemory, setMemoryGlobal, memories, setMemories, user, setOpen } =
     useContext(GlobalContext)
   
   const deleteMemory = async (id) => {
