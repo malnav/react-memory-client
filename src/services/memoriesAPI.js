@@ -1,4 +1,4 @@
-import axiosLIB from "axios";
+import axiosLIB from "axios"
 
 const axios = axiosLIB.create()
 
@@ -15,33 +15,32 @@ export const setAuthToken = (token) => {
 }
 
 export const searchMemoriesAPI = async (query) => {
-    const response = await axios.get(`/api/v1/memories/search?searchQuery=${query}`);
-    console.log(response)
+    const response = await axios.get(`${process.env.REACT_APP_API_ENDPOINT}/api/v1/memories/search?searchQuery=${query}`);
     return response
 }
 
 export const getMemoriesAPI = async () => {
-    const response = await axios.get("/api/v1/memories");
+    const response = await axios.get(`${process.env.REACT_APP_API_ENDPOINT}/api/v1/memories`);
     return response
 }
 
 export const deleteMemoryAPI = async (id) => {
-    const response = await axios.delete(`/api/v1/memories/${id}`);
+    const response = await axios.delete(`${process.env.REACT_APP_API_ENDPOINT}/api/v1/memories/${id}`);
     return response
 }
 
 export const updateLikeAPI = async (id) => {
-    const response = await axios.patch(`/api/v1/memories/${id}/like`);
+    const response = await axios.patch(`${process.env.REACT_APP_API_ENDPOINT}/api/v1/memories/${id}/like`);
     return response
 }
 
 export const addMemoryAPI = async (memory) => {
-    const response = await axios.post("/api/v1/memories", memory);
+    const response = await axios.post(`${process.env.REACT_APP_API_ENDPOINT}/api/v1/memories`, memory);
     return response
 }
 
 export const updateMemoryAPI =  async (memory) => {
-    const response = await axios.patch(`/api/v1/memories/${memory._id}`, memory);
+    const response = await axios.patch(`${process.env.REACT_APP_API_ENDPOINT}/api/v1/memories/${memory._id}`, memory);
     return response
 }
 
